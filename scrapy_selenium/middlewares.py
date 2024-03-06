@@ -52,10 +52,10 @@ class SeleniumMiddleware:
         }
 
         # locally installed driver
+        # rkang: Quick hack for chrome
         if driver_executable_path is not None:
             driver_kwargs = {
-                'executable_path': driver_executable_path,
-                f'{driver_name}_options': driver_options
+                f'options': driver_options
             }
             self.driver = driver_klass(**driver_kwargs)
         # remote driver
